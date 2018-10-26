@@ -16,4 +16,15 @@ class Guest
     return @money >= cost
   end
 
+  def cheer_for_song(songs)
+    if songs.include?(@fave_song)
+      return "Cool! They have #{@fave_song.name}, my favourite!"
+    else
+      return false
+    end
+  end
+
+  def sing_song(song)
+    return song.lyrics
+  end
 end

@@ -42,4 +42,17 @@ class TestGuest < MiniTest::Test
     assert_equal(false, @guest1.check_affordable(10))
   end
 
+  def test_cheer_for_song__song_found
+    songs = [@song1, @song3, @song4]
+    assert_equal("Cool! They have Bohemian Rhapsody, my favourite!", @guest3.cheer_for_song(songs))
+  end
+
+  def test_cheer_for_song__song_not_found
+    songs = [@song1, @song3, @song4]
+    assert_equal(false, @guest2.cheer_for_song(songs))
+  end
+
+  def test_sing_song
+    assert_equal("I did it, myyyyyyyyyy waaaaaaay!", @guest1.sing_song(@song5))
+  end
 end
