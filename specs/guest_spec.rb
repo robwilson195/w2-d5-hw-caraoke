@@ -29,5 +29,17 @@ class TestGuest < MiniTest::Test
     assert_equal(20, @guest3.money)
   end
 
+  def test_pay_money
+    @guest3.pay_money(5)
+    assert_equal(15, @guest3.money)
+  end
+
+  def test_check_affordable__true
+    assert_equal(true, @guest3.check_affordable(10))
+  end
+
+  def test_check_affordable__false
+    assert_equal(false, @guest1.check_affordable(10))
+  end
 
 end

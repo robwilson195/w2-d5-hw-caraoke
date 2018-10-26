@@ -8,4 +8,12 @@ class Guest
     @money = money
   end
 
+  def pay_money(cost)
+    @money -= cost
+  end
+
+  def check_affordable(cost)
+    return @money >= cost
+  end
+
 end
