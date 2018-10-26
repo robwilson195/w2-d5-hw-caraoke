@@ -36,4 +36,13 @@ class Room
     @guests.clear
   end
 
+  def check_in_guest(guest)
+    return "Room #{@number} is full." unless check_availability
+    return "#{guest.name} doesn't have the entry fee." unless guest.check_affordable(@fee)
+    guest.pay_money(@fee)
+    @guests << guest
+    guest.cheer_for_song(@playlist)
+    return
+  end
+
 end
