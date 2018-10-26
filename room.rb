@@ -36,11 +36,13 @@ class Room
     @guests.clear
   end
 
+  # This whole function should be sent to viewer.
   def check_in_guest(guest)
     return "Room #{@number.to_s} is full." unless check_availability
     return "#{guest.name} doesn't have the entry fee." unless guest.check_affordable(@fee)
     guest.pay_money(@fee)
     @guests << guest
+    # This should send the result to viewer.
     guest.cheer_for_song(@playlist)
     return "Check in successful"
   end
