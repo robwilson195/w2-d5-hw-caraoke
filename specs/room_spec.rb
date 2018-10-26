@@ -14,14 +14,14 @@ class TestRoom < MiniTest::Test
     @song5 = Song.new("My Way", "Frank Sinatra", "I did it, myyyyyyyyyy waaaaaaay!")
 
     @songs1 = [@song1, @song3, @song4, @song5]
-    @songs2 = [@song1, @songs2, @song3, @song4, @song5]
+    @songs2 = [@song1, @song2, @song3, @song4, @song5]
 
     @guest1 = Guest.new("Rob", @song1, 5)
     @guest2 = Guest.new("James", @song2, 10)
     @guest3 = Guest.new("Christina", @song3, 20)
 
-    @room1 = Room.new(1, 5, songs1, :Basic)
-    @room2 = Room.new(2, 3, songs2, :Premium)
+    @room1 = Room.new(1, 5, @songs1, :basic)
+    @room2 = Room.new(2, 3, @songs2, :premium)
   end
 
   def test_room_has_number
@@ -29,11 +29,11 @@ class TestRoom < MiniTest::Test
   end
 
   def test_room_has_guests
-    assert_equal([], room1.guests)
+    assert_equal([], @room1.guests)
   end
 
   def test_room_has_capacity
-    assert_equal(5, @room2.capacity)
+    assert_equal(3, @room2.capacity)
   end
 
   def test_room_has_playlist
