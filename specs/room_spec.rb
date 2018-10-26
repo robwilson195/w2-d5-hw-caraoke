@@ -26,59 +26,59 @@ class TestRoom < MiniTest::Test
     @room2 = Room.new(2, 3, @songs2, :premium)
   end
 
-  # def test_room_has_number
-  #   assert_equal(1, @room1.number)
-  # end
-  #
-  # def test_room_has_guests
-  #   assert_equal([], @room1.guests)
-  # end
-  #
-  # def test_room_has_capacity
-  #   assert_equal(3, @room2.capacity)
-  # end
-  #
-  # def test_room_has_playlist
-  #   assert_equal(@songs2, @room2.playlist)
-  # end
-  #
-  # def test_room_has_class
-  #   assert_equal(:basic, @room1.class)
-  # end
-  #
-  # def test_room_has_fee
-  #   assert_equal(4, @room1.fee)
-  # end
-  #
-  # def test_check_availability__true
-  #   assert_equal(true, @room1.check_availability)
-  # end
-  #
-  # def test_check_availability__false
-  #   @room2.guests << @guest1
-  #   @room2.guests << @guest2
-  #   @room2.guests << @guest3
-  #   assert_equal(false, @room2.check_availability)
-  # end
-  #
-  # def test_add_song
-  #   @room1.add_song(@song2)
-  #   assert_equal(5, @room1.playlist.length)
-  # end
-  #
-  # def test_check_out_guest
-  #   @room1.guests << @guest1
-  #   @room1.check_out_guest("Rob")
-  #   assert_equal(0, @room1.guests.length)
-  # end
-  #
-  # def test_close_room
-  #   @room1.guests << @guest1
-  #   @room1.guests << @guest2
-  #   @room1.close_room
-  #   assert_equal(0, @room1.guests.length)
-  # end
-  #
+  def test_room_has_number
+    assert_equal(1, @room1.number)
+  end
+
+  def test_room_has_guests
+    assert_equal([], @room1.guests)
+  end
+
+  def test_room_has_capacity
+    assert_equal(3, @room2.capacity)
+  end
+
+  def test_room_has_playlist
+    assert_equal(@songs2, @room2.playlist)
+  end
+
+  def test_room_has_class
+    assert_equal(:basic, @room1.class)
+  end
+
+  def test_room_has_fee
+    assert_equal(4, @room1.fee)
+  end
+
+  def test_check_availability__true
+    assert_equal(true, @room1.check_availability)
+  end
+
+  def test_check_availability__false
+    @room2.guests << @guest1
+    @room2.guests << @guest2
+    @room2.guests << @guest3
+    assert_equal(false, @room2.check_availability)
+  end
+
+  def test_add_song
+    @room1.add_song(@song2)
+    assert_equal(5, @room1.playlist.length)
+  end
+
+  def test_check_out_guest
+    @room1.guests << @guest1
+    @room1.check_out_guest("Rob")
+    assert_equal(0, @room1.guests.length)
+  end
+
+  def test_close_room
+    @room1.guests << @guest1
+    @room1.guests << @guest2
+    @room1.close_room
+    assert_equal(0, @room1.guests.length)
+  end
+
   def test_check_guest_in_to_room__success
     message = @room1.check_in_guest(@guest1)
     assert_equal("Check in successful", message)
