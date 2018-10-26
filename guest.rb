@@ -27,4 +27,6 @@ class Guest
   def sing_song(song)
     return song.lyrics
   end
+
+  
 end
