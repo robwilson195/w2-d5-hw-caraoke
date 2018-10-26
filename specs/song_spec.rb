@@ -3,11 +3,7 @@ require( 'minitest/rg' )
 require_relative( '../song.rb' )
 
 class TestSong < MiniTest::Test
-  # Sweet Caroline – Neil Diamond.
-  # Don't Stop Believin' – Journey.
-  # Bohemian Rhapsody – Queen.
-  # Wonderwall – Oasis.
-  # My Way – Frank Sinatra.
+
   def setup
     @song1 = Song.new("Sweet Caroline", "Neil Diamond", "Sweeeeet Caroline, bah bah bah!")
     @song2 = Song.new("Don't Stop Believin'", "Journey", "Don't stop, believin'. Hold on to that feeeeeeeeliiiiin'!")
